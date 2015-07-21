@@ -1,5 +1,19 @@
-# display tuning
+allow system_server ramdump_data_file:dir r_dir_perms;
+allow system_server ramdump_data_file:file r_file_perms;
+allow system_server self:netlink_socket create_socket_perms;
+allow system_server rtc_device:chr_file rw_file_perms;
+allow system_server sysfs_hardware:file rw_file_perms;
+allow system_server default_prop:property_service set;
 allow system_server display_sysfs:file rw_file_perms;
-
-# CMHW Vibration
 allow system_server vibeamp_sysfs:file rw_file_perms;
+allow system_server apk_data_file:sock_file { write getattr };
+allow system_server time_daemon:unix_stream_socket connectto;
+allow system_server unlabeled:file write;
+
+allow sysinit unlabeled:file { read getattr open };
+
+allow lmkd unlabeled:file { read getattr open };
+
+allow rfs_access unlabeled:file { read getattr open };
+
+allow servicemanager unlabeled:file { read getattr open };

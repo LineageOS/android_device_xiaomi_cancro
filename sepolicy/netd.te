@@ -1,0 +1,3 @@
+allow netd unlabeled:file { write read getattr open };
+allow netd unlabeled:dir { read search open };
+allow netd kernel:file { read getattr open };

@@ -1,0 +1,4 @@
+allow location apk_data_file:sock_file read;
+allow location qmuxd:unix_stream_socket connectto;
+allow location qmuxd_qmuxd_socket:sock_file write;
+allow location unlabeled:file { read getattr open };

@@ -1,0 +1,1 @@
+allow ims unlabeled:file { read getattr open };

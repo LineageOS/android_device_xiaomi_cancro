@@ -1,0 +1,1 @@
+allow irsc_util unlabeled:file { read getattr open };

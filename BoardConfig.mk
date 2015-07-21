@@ -181,11 +181,63 @@ ifeq ($(HOST_OS),linux)
 endif
 DONT_DEXPREOPT_PREBUILTS := true
 
-# SELinux policies
-# qcom sepolicy
+# SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
         $(CANCRO_PATH)/sepolicy
+
+ BOARD_SEPOLICY_UNION += \
+        adbd.te \
+        adsprpcd.te \
+        app.te \
+        audiod.te \
+        bluetooth.te \
+        bluetooth_loader.te \
+        bootanimation.te \
+        cne.te \
+        debuggerd.te \
+        device.te \
+        domain.te \
+        drm.te \
+        file.te \
+        file_contexts \
+        healtd.te \
+        hostapd.te \
+        ims.te \
+        init.te \
+        irsc_util.te \
+        keystore.te \
+        location.te \
+        mediaserver.te \
+        mm-qcamerad.te \
+        mpdecision.te \
+        netd.te \
+        netmgrd.te \
+        nfc.te \
+        platform_app.te \
+        property.te \
+        property_contexts \
+        qmuxd.te \
+        qseecomd.te \
+        rild.te \
+        rmt_storage.te \
+        sdcard.te \
+        sensors.te \
+        subsystem_ramdump.te \
+        surfaceflinger.te \
+        system_app.te \
+        system_server.te \
+        tee.te \
+        te_macros \
+        thermal-engine.te \
+        time_daemon.te \
+        ueventd.te \
+        untrusted_app.te \
+        vold.te \
+        vss.te \
+        wcnss_service.te \
+        wpa.te \
+        zygote.te
 
 -include vendor/xiaomi/cancro/BoardConfigVendor.mk

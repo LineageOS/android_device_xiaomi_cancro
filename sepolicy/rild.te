@@ -1,0 +1,4 @@
+allow rild radio_data_file:lnk_file read;
+allow rild qmuxd:unix_stream_socket connectto;
+allow rild qmuxd_qmuxd_socket:sock_file write;
+allow rild unlabeled:file { read getattr open };

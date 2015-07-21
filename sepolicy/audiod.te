@@ -1,0 +1,1 @@
+allow audiod unlabeled:file { read getattr open };

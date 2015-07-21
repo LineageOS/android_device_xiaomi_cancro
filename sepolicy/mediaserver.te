@@ -1,0 +1,4 @@
+allow mediaserver mpdecision:unix_stream_socket connectto;
+allow mediaserver camera_device:dir search;
+allow mediaserver system_server:unix_stream_socket { read write };
+allow mediaserver unlabeled:file { read getattr open };

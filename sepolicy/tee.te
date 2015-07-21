@@ -1,0 +1,1 @@
+allow tee unlabeled:file { read getattr open };
