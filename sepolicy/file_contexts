@@ -1,9 +1,26 @@
 /data/cam_socket.*                                 u:object_r:camera_socket:s0
 
+# GPU device
+/dev/kgsl           u:object_r:gpu_device:s0
+
+# Default label for shared memory drivers
+/dev/smd([0-9])+                       u:object_r:smd_device:s0
+/dev/smdcntl([0-9])+                   u:object_r:radio_device:s0
+
+# DIAG
+/data/diag_logs(/.*)?                  u:object_r:diag_logs:s0
+
+# CPU power controls
+/sys/module/msm_pm/modes(/.*)?         u:object_r:sysfs_mpdecision:s0
+/data/system/default_values            u:object_r:mpdecision_state:s0
+
+# Sysfs files used by qmuxd
+/sys/devices/virtual/smdpkt/smdcntl([0-9])+/open_timeout u:object_r:sysfs_smdcntl_open_timeout:s0
+
 /sys/devices/virtual/graphics/fb0/cabc             u:object_r:display_sysfs:s0
 /sys/devices/virtual/graphics/fb0/color_enhance    u:object_r:display_sysfs:s0
 /sys/devices/virtual/graphics/fb0/sre              u:object_r:display_sysfs:s0
 /sys/devices/virtual/graphics/fb0/rgb              u:object_r:display_sysfs:s0
 
-# CMHW Vibration
+# CMHW
 /sys/vibrator/pwmvalue                             u:object_r:vibeamp_sysfs:s0

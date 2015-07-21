@@ -1,0 +1,1 @@
+allow zygote unlabeled:file { read getattr open };

@@ -1,0 +1,3 @@
+allow sdcard unlabeled:file { read getattr open };
+allow sdcardd unlabeled:file { read getattr open };
+allow tee unlabeled:file { read getattr open };
