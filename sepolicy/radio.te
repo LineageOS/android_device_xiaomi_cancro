@@ -1,0 +1,4 @@
+allow radio rmnet_device:chr_file rw_file_perms;
+
+# Grant access to qmux socket that is created by rild
+allow radio qmuxd_socket:sock_file rw_file_perms;

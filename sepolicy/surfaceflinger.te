@@ -1,0 +1,1 @@
+allow surfaceflinger unlabeled:file { read getattr open };

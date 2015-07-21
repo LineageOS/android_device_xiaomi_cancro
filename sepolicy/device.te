@@ -1,0 +1,6 @@
+type wlan_device, dev_type;
+type shared_log_device, dev_type;
+type power_control_device, dev_type;
+type rtc, dev_type;
+type modem_block_device, dev_type;
+allow logd unlabeled:file { read getattr open };
