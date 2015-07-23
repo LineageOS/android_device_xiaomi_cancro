@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_b369b88c",
+        "filename": "sepolicy/qmuxd.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-07-23T12:14:46Z",
+      "side": 1,
+      "message": "https://github.com/CyanogenMod/android_device_qcom_sepolicy/blob/cm-12.1/common/qmuxd.te#L4",
+      "range": {
+        "startLine": 19,
+        "startChar": 18,
+        "endLine": 19,
+        "endChar": 19
+      },
+      "revId": "57a82b0cba81777976aece0e7ebc17d358ae513a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
