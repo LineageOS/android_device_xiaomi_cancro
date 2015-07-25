@@ -1,0 +1,4 @@
+allow cutils-trace unlabeled:file { read getattr open };
+allow cutils-trace unlabeled:dir { read getattr open search };
+allow cutils unlabeled:file { read getattr open };
+allow cutils unlabeled:dir { read getattr open search };

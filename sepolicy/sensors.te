@@ -1,0 +1,2 @@
+#============= sensors ==============
+allow sensors unlabeled:file { read getattr open };

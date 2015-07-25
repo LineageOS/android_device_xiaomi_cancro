@@ -1,5 +1,17 @@
-# display tuning
-allow system_server display_sysfs:file rw_file_perms;
+#============= servicemanager ==============
+allow servicemanager unlabeled:file { read getattr open  };
+allow servicemanager unlabeled:dir { read getattr search };
 
-# CMHW Vibration
+#============= surfaceflinger ==============
+allow surfaceflinger unlabeled:file { read getattr open };
+
+#============= sysinit ==============
+allow sysinit unlabeled:file { read getattr open };
+
+#============= zygote ==============
+allow zygote unlabeled:file { read getattr open };
+allow zygote unlabeled:dir { read getattr search };
+
+#============= cmhw ==============
+allow system_server display_sysfs:file rw_file_perms;
 allow system_server vibeamp_sysfs:file rw_file_perms;

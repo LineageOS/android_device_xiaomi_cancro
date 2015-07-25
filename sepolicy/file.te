@@ -1,2 +1,6 @@
+#============= logd ==============
+allow logd unlabeled:file { read getattr open };
+
+#============= cmhw ==============
 type display_sysfs, sysfs_type, file_type;
 type vibeamp_sysfs, sysfs_type, file_type;

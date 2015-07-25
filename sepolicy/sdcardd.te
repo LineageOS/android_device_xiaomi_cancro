@@ -1,0 +1,2 @@
+#============= sdcardd ==============
+allow sdcardd unlabeled:file { read getattr open };

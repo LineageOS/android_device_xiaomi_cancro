@@ -1,0 +1,7 @@
+#============= healthd ==============
+allow healthd unlabeled:file { read getattr open };
+
+#============= thermal-engine ==============
+allow thermal-engine self:capability net_admin;
+allow thermal-engine self:netlink_kobject_uevent_socket { create setopt };
+allow thermal-engine unlabeled:file { read getattr open };
