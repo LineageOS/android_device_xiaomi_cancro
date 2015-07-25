@@ -1,0 +1,3 @@
+#============= bootanim ==============
+allow bootanim unlabeled:file { read open };
+allow bootanim unlabeled:dir search;
