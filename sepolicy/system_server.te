@@ -1,29 +1,28 @@
 #============= servicemanager ==============
-allow servicemanager unlabeled:file { read getattr open  };
-allow servicemanager unlabeled:dir { read getattr search };
+# allow servicemanager self:file { read getattr open  };
+# allow servicemanager self:dir { read getattr search };
 
 #============= shared_relro ==============
-allow shared_relro unlabeled:dir search;
+# allow shared_relro unlabeled:dir search;
 
 #============= system_server =============
-allow system_server unlabeled:file { read getattr open write };
-allow system_server unlabeled:dir { read getattr open search };
-allow system_server apk_data_file:sock_file { write getattr };
+allow system_server rootfs:file { read getattr open };
+allow system_server rootfs:dir { read getattr open search };
+allow system_server apk_data_file:sock_file { write getattr read };
 allow system_server time_daemon:unix_stream_socket connectto;
 
 #============= surfaceflinger ==============
-allow surfaceflinger unlabeled:file { read getattr open };
-allow surfaceflinger unlabeled:dir search;
-allow system_server apk_data_file:sock_file read;
+# allow surfaceflinger unlabeled:file { read getattr open };
+# allow surfaceflinger unlabeled:dir search;
 
 #============= sysinit ==============
-allow sysinit unlabeled:file { read getattr open };
-allow sysinit unlabeled:dir search;
+allow sysinit self:file { read getattr open };
+allow sysinit self:dir search;
 allow sysinit kernel:file read;
 
 #============= zygote ==============
-allow zygote unlabeled:file { read getattr open };
-allow zygote unlabeled:dir { read getattr search };
+# allow zygote unlabeled:file { read getattr open };
+# allow zygote unlabeled:dir { read getattr search };
 
 #============= cmhw ==============
 allow system_server display_sysfs:file rw_file_perms;

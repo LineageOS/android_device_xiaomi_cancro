@@ -1,6 +1,8 @@
 #============= logd ==============
-allow logd unlabeled:file { read getattr open };
-allow logd unlabeled:dir search;
+allow logd logd_exec:file { read getattr open };
+allow logd logd_exec:dir search;
+allow audiod logd_exec:file { read getattr open };
+allow audiod logd_exec:dir search;
 
 #============= cmhw ==============
 type display_sysfs, sysfs_type, file_type;
