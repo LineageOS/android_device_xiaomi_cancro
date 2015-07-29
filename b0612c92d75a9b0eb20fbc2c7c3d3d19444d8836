@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf091321_47ff3867",
+        "filename": "sepolicy/adbd.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2015-07-29T00:36:33Z",
+      "side": 1,
+      "message": "This seems unneded again.\n\nnothing device specific here.",
+      "revId": "b0612c92d75a9b0eb20fbc2c7c3d3d19444d8836",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_2704447b",
+        "filename": "sepolicy/file.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2015-07-29T00:36:33Z",
+      "side": 1,
+      "message": "Same as adbd.te",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 32
+      },
+      "revId": "b0612c92d75a9b0eb20fbc2c7c3d3d19444d8836",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_c7f2289b",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2015-07-29T00:36:33Z",
+      "side": 1,
+      "message": "This looks wrong.\n\nhealthd !\u003d thermal-engine",
+      "revId": "b0612c92d75a9b0eb20fbc2c7c3d3d19444d8836",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_a7ef34af",
+        "filename": "sepolicy/keystore.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2015-07-29T00:36:33Z",
+      "side": 1,
+      "message": "Same as adbd.te",
+      "revId": "b0612c92d75a9b0eb20fbc2c7c3d3d19444d8836",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_672fdcf6",
+        "filename": "sepolicy/location.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2015-07-29T00:36:33Z",
+      "side": 1,
+      "message": "This looks wrong.",
+      "revId": "b0612c92d75a9b0eb20fbc2c7c3d3d19444d8836",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_2739e440",
+        "filename": "sepolicy/net.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2015-07-29T00:36:33Z",
+      "side": 1,
+      "message": "Same as adbd.te, perhaps. may want to double check.",
+      "revId": "b0612c92d75a9b0eb20fbc2c7c3d3d19444d8836",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_6718fcd2",
+        "filename": "sepolicy/sensors.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2015-07-29T00:36:33Z",
+      "side": 1,
+      "message": "This looks weird too.",
+      "revId": "b0612c92d75a9b0eb20fbc2c7c3d3d19444d8836",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_470df88e",
+        "filename": "sepolicy/system_server.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2195
+      },
+      "writtenOn": "2015-07-29T00:36:33Z",
+      "side": 1,
+      "message": "This doesn\u0027t look right.",
+      "revId": "b0612c92d75a9b0eb20fbc2c7c3d3d19444d8836",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
