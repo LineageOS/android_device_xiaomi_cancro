@@ -16,6 +16,24 @@
       "revId": "3e34430f32dcc987ba01caddda0c25c023f25516",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_a2b71fd9",
+        "filename": "rootdir/root/init.target.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2015-07-30T02:38:38Z",
+      "side": 1,
+      "message": "yep, but i think i\u0027d go for fstab fix instead of this",
+      "parentUuid": "bf091321_4213a30e",
+      "revId": "3e34430f32dcc987ba01caddda0c25c023f25516",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
