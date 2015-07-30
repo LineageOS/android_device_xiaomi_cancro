@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf091321_4213a30e",
+        "filename": "rootdir/root/init.target.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6334
+      },
+      "writtenOn": "2015-07-30T01:56:18Z",
+      "side": 1,
+      "message": "All 3 (cache, persist, and modem) are in the fstab. Are all 3 related to the modem issue?",
+      "revId": "3e34430f32dcc987ba01caddda0c25c023f25516",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
