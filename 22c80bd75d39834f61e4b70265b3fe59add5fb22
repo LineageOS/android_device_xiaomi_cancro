@@ -1,0 +1,169 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf091321_c273334d",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-07-30T02:40:30Z",
+      "side": 1,
+      "message": "isn\u0027t the goal of this to run in strict mode?",
+      "revId": "22c80bd75d39834f61e4b70265b3fe59add5fb22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_8293fb4f",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-07-30T02:40:30Z",
+      "side": 1,
+      "message": "whitespaces for indentation here, tabs below",
+      "range": {
+        "startLine": 189,
+        "startChar": 10,
+        "endLine": 189,
+        "endChar": 21
+      },
+      "revId": "22c80bd75d39834f61e4b70265b3fe59add5fb22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_4288431e",
+        "filename": "rootdir/root/init.qcom.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-07-30T02:40:30Z",
+      "side": 1,
+      "message": "nitpicky, but maybe not in this ps",
+      "revId": "22c80bd75d39834f61e4b70265b3fe59add5fb22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_6298e769",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-07-30T02:40:30Z",
+      "side": 1,
+      "message": "healthd !\u003d thermal-engine",
+      "revId": "22c80bd75d39834f61e4b70265b3fe59add5fb22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_429de357",
+        "filename": "sepolicy/location.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-07-30T02:40:30Z",
+      "side": 1,
+      "message": "that looks weird - why apk_data_file?",
+      "range": {
+        "startLine": 2,
+        "startChar": 6,
+        "endLine": 2,
+        "endChar": 14
+      },
+      "revId": "22c80bd75d39834f61e4b70265b3fe59add5fb22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_029feb50",
+        "filename": "sepolicy/rmt_storage.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-07-30T02:40:30Z",
+      "side": 1,
+      "message": "looks like a dupe from qcom sepolicy",
+      "revId": "22c80bd75d39834f61e4b70265b3fe59add5fb22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_e2abd772",
+        "filename": "sepolicy/sensors.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-07-30T02:40:30Z",
+      "side": 1,
+      "message": "see location.te",
+      "revId": "22c80bd75d39834f61e4b70265b3fe59add5fb22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_42b603dc",
+        "filename": "sepolicy/thermal-engine.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-07-30T02:40:30Z",
+      "side": 1,
+      "message": "this stuff is basically in qcom sepolicy as well. you could just label the sysfs instead of duplicating the policy.",
+      "revId": "22c80bd75d39834f61e4b70265b3fe59add5fb22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_22cb0f54",
+        "filename": "sepolicy/wcnss_service.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2015-07-30T02:40:30Z",
+      "side": 1,
+      "message": "again, this is in qcom sepolicy... are you sure you need the additional perms?",
+      "revId": "22c80bd75d39834f61e4b70265b3fe59add5fb22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
