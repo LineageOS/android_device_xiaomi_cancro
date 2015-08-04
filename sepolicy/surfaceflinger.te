@@ -1,0 +1,2 @@
+#============= surfaceflinger ==============
+allow system_server apk_data_file:sock_file read;
