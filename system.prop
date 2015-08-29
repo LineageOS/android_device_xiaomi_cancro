@@ -18,3 +18,6 @@ ro.qcom.ad.calib.data=/system/etc/calib.cfg
 ro.qc.sdk.sensors.gestures=true
 ro.qc.sdk.gestures.camera=false
 ro.qc.sdk.camera.facialproc=false
+
+#avoid setting cdma sim to 2g
+ro.ril.multi_rat_capable=true
