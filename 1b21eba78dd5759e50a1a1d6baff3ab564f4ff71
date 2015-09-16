@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_d2066521",
+        "filename": "cancro.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-09-16T01:28:48Z",
+      "side": 1,
+      "message": "Wow... how was this accepted for nightlies?",
+      "range": {
+        "startLine": 412,
+        "startChar": 4,
+        "endLine": 413,
+        "endChar": 19
+      },
+      "revId": "1b21eba78dd5759e50a1a1d6baff3ab564f4ff71",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
