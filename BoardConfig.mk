@@ -172,6 +172,8 @@ PROTOBUF_SUPPORTED := true
 # Compatibility with pre-kitkat Qualcomm sensor HALs
 SENSORS_NEED_SETRATE_ON_ENABLE := true
 
+# Healthd
+BOARD_HAL_STATIC_LIBRARIES += libhealthd.cancro
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
