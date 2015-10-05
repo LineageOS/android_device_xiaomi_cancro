@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_bb03b20f",
+        "filename": "libhealthd/healthd_board_cancro.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 12076
+      },
+      "writtenOn": "2015-10-05T03:01:18Z",
+      "side": 1,
+      "message": "\"{\" is missing here",
+      "revId": "83402c61b07fa8d7dca2fea783db47543913aa96",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
