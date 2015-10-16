@@ -11,10 +11,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
-# set USB OTG enabled to add support for USB storage type
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.isUsbOtgEnabled=1
-
 # Charger
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/root/chargeonlymode:root/sbin/chargeonlymode
@@ -205,6 +201,7 @@ PRODUCT_COPY_FILES += \
 # Media profile
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
@@ -214,6 +211,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libdivxdrmdecrypt \
+    libextmedia_jni \
     libdashplayer \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -223,6 +221,8 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVdecHevc \
     libOmxVenc \
+    libOmxVidcCommon \
+    libqcmediaplayer \
     libstagefrighthw \
     qcmediaplayer
 
@@ -244,10 +244,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.speaker.prot.enable=true \
     qcom.hw.aac.encoder=false \
-    tunnel.audio.encode=false \
     persist.audio.init_volume_index=1 \
     audio.offload.buffer.size.kb=32 \
-    av.offload.enable=true \
+    audio.offload.video=true \
     audio.offload.gapless.enabled=false \
     audio.offload.disable=1 \
     use.dedicated.device.for.voip=false \
@@ -290,9 +289,6 @@ PRODUCT_PACKAGES += \
     mke2fs_static \
     resize2fs_static
 
-PRODUCT_PACKAGES += \
-    libxml2
-
 # Graphics
 PRODUCT_PACKAGES += \
     copybit.msm8974 \
@@ -326,7 +322,8 @@ PRODUCT_PACKAGES += \
     ethertypes \
     curl \
     libnl_2 \
-    libbson
+    libbson \
+    libxml2
 
 # ANT+
 PRODUCT_PACKAGES += \

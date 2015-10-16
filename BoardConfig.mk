@@ -32,6 +32,8 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
 
+USE_CLANG_PLATFORM_BUILD := true
+
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -46,12 +48,12 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD -D__ARM_USE_PLD -D__ARM_CACHE_LINE_S
 COMMON_GLOBAL_CPPFLAGS += -DNO_SECURE_DISCARD
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := $(CANCRO_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=none vmalloc=340M androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE := console=none vmalloc=340M androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=disabled
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
+BOARD_DTBTOOL_ARGS := -2
 TARGET_KERNEL_SOURCE := kernel/xiaomi/cancro
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := cyanogen_cancro_defconfig
@@ -59,7 +61,7 @@ TARGET_KERNEL_CONFIG := cyanogen_cancro_defconfig
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := $(CANCRO_PATH)/init/init_cancro.c
+TARGET_LIBINIT_DEFINES_FILE := $(CANCRO_PATH)/init/init_cancro.cpp
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -79,6 +81,7 @@ AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 AUDIO_FEATURE_ENABLED_USBAUDIO := true
 AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 BOARD_FORTEMEDIA_QDSP_ENABLED := true
+USE_CUSTOM_AUDIO_POLICY := 1
 
 # FM Radio
 QCOM_FM_ENABLED := true
@@ -99,9 +102,9 @@ TARGET_GRALLOC_USES_ASHMEM := false
 TARGET_USES_ION := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 HAVE_ADRENO_SOURCE:= false
-VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
-SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
-
+VSYNC_EVENT_PHASE_OFFSET_NS := 2500000
+SF_VSYNC_EVENT_PHASE_OFFSET_NS := 0000000
+TARGET_USES_C2D_COMPOSITION := true
 TARGET_USE_ION_COMPAT := true
 
 # Shader cache config options
@@ -199,9 +202,9 @@ DONT_DEXPREOPT_PREBUILTS := true
 
 # SELinux policies
 # qcom sepolicy
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += \
-        $(CANCRO_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+#        $(CANCRO_PATH)/sepolicy
 
 -include vendor/xiaomi/cancro/BoardConfigVendor.mk
