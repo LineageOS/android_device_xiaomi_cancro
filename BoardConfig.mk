@@ -29,6 +29,8 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
 
+USE_CLANG_PLATFORM_BUILD := true
+
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -36,15 +38,12 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Flags
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
-COMMON_GLOBAL_CPPFLAGS += -DNO_SECURE_DISCARD
+COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := $(CANCRO_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=none vmalloc=340M androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE := console=none vmalloc=340M androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 2048
@@ -52,6 +51,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
 TARGET_KERNEL_SOURCE := kernel/xiaomi/cancro
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := cyanogen_cancro_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+BOARD_DTBTOOL_ARGS := -2
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -67,8 +68,8 @@ BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 
 # FM Radio
-QCOM_FM_ENABLED := true
 AUDIO_FEATURE_ENABLED_FM := true
+TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -76,19 +77,18 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(CANCRO_PATH)/bluetooth
 QCOM_BT_USE_SMD_TTY := true
 BLUETOOTH_HCI_USE_MCT := true
+FEATURE_QCRIL_UIM_SAP_SERVER_MODE := true
 
 # Graphics
 BOARD_EGL_CFG := $(CANCRO_PATH)/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
-TARGET_GRALLOC_USES_ASHMEM := false
+TARGET_USE_COMPAT_GRALLOC_PERFORM := true
 TARGET_USES_ION := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 HAVE_ADRENO_SOURCE:= false
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
-
-TARGET_USE_ION_COMPAT := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -106,15 +106,13 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_DRIVER             := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
-WIFI_DRIVER_MODULE_NAME          := "wlan"
-WIFI_DRIVER_FW_PATH_STA          := "sta"
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_qcwcn
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
 WIFI_DRIVER_FW_PATH_AP           := "ap"
+WIFI_DRIVER_FW_PATH_STA          := "sta"
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4         := true
@@ -156,15 +154,21 @@ TARGET_HW_DISK_ENCRYPTION := false
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
 
-# Compatibility with pre-kitkat Qualcomm sensor HALs
-SENSORS_NEED_SETRATE_ON_ENABLE := true
-
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+# Radio
+TARGET_RIL_VARIANT := caf
+
+# Flags
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD -DUSE_RIL_VERSION_10
+COMMON_GLOBAL_CPPFLAGS += -DNO_SECURE_DISCARD -DUSE_RIL_VERSION_10
+
+# Keymaster
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Simple time service client
 BOARD_USES_QC_TIME_SERVICES := true

@@ -7,10 +7,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
-# USB
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
-
 # set USB OTG enabled to add support for USB storage type
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=1
@@ -66,17 +62,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.gps.agps_provider=1
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rild.nitz_plmn="" \
-    persist.rild.nitz_long_ons_0="" \
-    persist.rild.nitz_long_ons_1="" \
-    persist.rild.nitz_long_ons_2="" \
-    persist.rild.nitz_long_ons_3="" \
-    persist.rild.nitz_short_ons_0="" \
-    persist.rild.nitz_short_ons_1="" \
-    persist.rild.nitz_short_ons_2="" \
-    persist.rild.nitz_short_ons_3=""
-
 # Camera
 PRODUCT_PACKAGES += \
     libxml2
@@ -98,6 +83,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.perf.cores_online=1
+
+# Art
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-swap=false
 
 # WiFi
 PRODUCT_COPY_FILES += \
@@ -140,7 +129,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15 \
-    wlan.driver.ath=0 \
     ro.use_data_netmgrd=true \
     persist.data.netmgrd.qos.enable=true \
     persist.data.tcpackprio.enable=true \
@@ -148,7 +136,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # IPC router config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
+    $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config \
+    $(LOCAL_PATH)/configs/lowi.conf:system/etc/lowi.conf
+
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -165,9 +155,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf \
     $(LOCAL_PATH)/nfc/nfcee_access_debug.xml:system/etc/nfcee_access.xml
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.nfc.port=I2C
 
 # Thermal config
 PRODUCT_COPY_FILES += \
@@ -221,14 +208,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libdivxdrmdecrypt \
-    libdashplayer \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
     libOmxVdec \
-    libOmxVdecHevc \
     libOmxVenc \
     libstagefrighthw \
 
@@ -247,20 +232,20 @@ PRODUCT_PACKAGES += \
 
 # Enable more sensor
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qti.sensors.qmd=true \
-    ro.qti.sensors.smd=true \
-    ro.qti.sensors.cmc=true \
-    ro.qti.sensors.vmd=true \
-    ro.qti.sensors.gtap=true \
-    ro.qti.sensors.pedometer=true \
-    ro.qti.sensors.pam=true \
-    ro.qti.sensors.scrn_ortn=true \
-    ro.qti.sensors.georv=true \
-    ro.qti.sensors.game_rv=true \
-    ro.qti.sensors.step_detector=true \
-    ro.qti.sensors.step_counter=true \
-    ro.qti.sensors.max_geomag_rotv=60 \
-    persist.debug.sensors.hal=w \
+    ro.qualcomm.sensors.qmd=true \
+    ro.qualcomm.sensors.smd=true \
+    ro.qualcomm.sensors.cmc=true \
+    ro.qualcomm.sensors.vmd=true \
+    ro.qualcomm.sensors.gtap=true \
+    ro.qualcomm.sensors.pedometer=true \
+    ro.qualcomm.sensors.pam=true \
+    ro.qualcomm.sensors.scrn_ortn=true \
+    ro.qualcomm.sensors.georv=true \
+    ro.qualcomm.sensors.game_rv=true \
+    ro.qc.sensors.step_detector=true \
+    ro.qc.sensors.step_counter=true \
+    ro.qc.sensors.max_geomag_rotvec=true \
+    debug.qualcomm.sns.hal=w \
     debug.qualcomm.sns.daemon=w \
     debug.qualcomm.sns.libsensor1=w
 
@@ -283,9 +268,19 @@ PRODUCT_PACKAGES += \
     memtrack.msm8974 \
     liboverlay
 
-# power down SIM card when modem is sent to Low Power Mode.
+# Do not power down SIM card when modem is sent to Low Power Mode.
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.apm_sim_not_pwdn=1
+    persist.radio.apm_sim_not_pwdn=0
+
+# Wifi
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.cne.feature=0
+
+# Radio
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
+    librmnetctl \
+    rmnetcli
 
 # Keystore
 PRODUCT_PACKAGES += \
@@ -293,10 +288,8 @@ PRODUCT_PACKAGES += \
 
 # FM Radio
 PRODUCT_PACKAGES += \
-    qcom.fmradio
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    hw.fm.internal_antenna=true
+    FMRadio \
+    libfmhni
 
 # USB
 PRODUCT_PACKAGES += \
@@ -323,32 +316,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.alwaysbleon=true \
     qcom.bt.dev_power_class=1
 
-ifneq ($(QCPATH),)
-# proprietary wifi display, if available
-PRODUCT_BOOT_JARS += WfdCommon
-endif
-
 # System properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.fm.transmitter=false \
-    com.qc.hardware=true \
-    persist.demo.hdmirotationlock=false \
-    ro.hdmi.enable=true \
-    debug.sf.hw=1 \
-    debug.egl.hw=1 \
-    persist.hwc.mdpcomp.enable=true \
-    debug.mdpcomp.logs=0 \
-    debug.composition.type=dyn \
-    ro.sf.lcd_density=480 \
-    dev.pm.dyn_samplingrate=1 \
-    ro.opengles.version=196608 \
-    ril.subscription.types=NV,RUIM \
-    persist.omh.enabled=true \
-    persist.sys.ssr.restart_level=3 \
-    persist.timed.enable=true \
     persist.debug.wfd.enable=1 \
+    persist.demo.hdmirotationlock=false \
+    persist.hwc.mdpcomp.enable=true \
+    persist.sys.isUsbOtgEnabled=1 \
     persist.sys.wfd.virtual=0 \
-    debug.mdpcomp.4k2kSplit=1
+    persist.timed.enable=true \
+    ro.hdmi.enable=true \
+    ro.opengles.version=196608 \
+    ro.sf.lcd_density=480 \
+	ro.telephony.default_network=9
 
 # Zip
 PRODUCT_PACKAGES += \
@@ -389,7 +368,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.print.xml:system/etc/permissions/android.software.print.xml
 
 # Screen density
-PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 ifneq ($(QCPATH),)
