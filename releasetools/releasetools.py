@@ -15,11 +15,13 @@
 #
 
 def FullOTA_PostValidate(info):
-    info.script.AppendExtra('run_program("/sbin/e2fsck", "-fy", "/dev/block/platform/msm_sdcc.1/by-name/system");');
-    info.script.AppendExtra('run_program("/tmp/install/bin/resize2fs_static", "/dev/block/platform/msm_sdcc.1/by-name/system");');
-    info.script.AppendExtra('run_program("/sbin/e2fsck", "-fy", "/dev/block/platform/msm_sdcc.1/by-name/system");');
+    info.script.AppendExtra(
+        'run_program("/sbin/e2fsck", "-fy", "/dev/block/platform/msm_sdcc.1/by-name/system");\n'
+        'run_program("/tmp/install/bin/resize2fs_static", "/dev/block/platform/msm_sdcc.1/by-name/system");\n'
+        'run_program("/sbin/e2fsck", "-fy", "/dev/block/platform/msm_sdcc.1/by-name/system");');
 
 def FullOTA_InstallEnd(info):
-    info.script.AppendExtra('mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system", "");');
-    info.script.AppendExtra('run_program("/tmp/install/bin/nfcchecker.sh");');
-    info.script.AppendExtra('unmount("/system");');
+    info.script.AppendExtra(
+        'mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system", "");\n'
+        'assert(run_program("/tmp/install/bin/nfcchecker.sh") == 0);\n'
+        'unmount("/system");');

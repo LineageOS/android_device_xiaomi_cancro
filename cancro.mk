@@ -7,14 +7,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
-# USB
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
-
-# set USB OTG enabled to add support for USB storage type
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.isUsbOtgEnabled=1
-
 # Charger
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/root/chargeonlymode:root/sbin/chargeonlymode
@@ -151,7 +143,7 @@ PRODUCT_PACKAGES += \
     Tag
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/nfc/nfcchecker.sh:/install/bin/nfcchecker.sh
+    $(LOCAL_PATH)/nfc/nfcchecker.sh:install/bin/nfcchecker.sh
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
@@ -282,7 +274,6 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
     rmnetcli
-
 
 # Keystore
 PRODUCT_PACKAGES += \
