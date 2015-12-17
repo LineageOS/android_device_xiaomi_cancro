@@ -66,18 +66,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.gps.agps_provider=1
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rild.nitz_plmn="" \
-    persist.rild.nitz_long_ons_0="" \
-    persist.rild.nitz_long_ons_1="" \
-    persist.rild.nitz_long_ons_2="" \
-    persist.rild.nitz_long_ons_3="" \
-    persist.rild.nitz_short_ons_0="" \
-    persist.rild.nitz_short_ons_1="" \
-    persist.rild.nitz_short_ons_2="" \
-    persist.rild.nitz_short_ons_3=""
-
-
 # Camera
 PRODUCT_PACKAGES += \
     libxml2
@@ -284,9 +272,16 @@ PRODUCT_PACKAGES += \
     memtrack.msm8974 \
     liboverlay
 
-# power down SIM card when modem is sent to Low Power Mode
+# Do not power down SIM card when modem is sent to Low Power Mode
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.apm_sim_not_pwdn=1
+    persist.radio.apm_sim_not_pwdn=0
+
+# Radio
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
+    librmnetctl \
+    rmnetcli
+
 
 # Keystore
 PRODUCT_PACKAGES += \
@@ -333,7 +328,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
     ro.hdmi.enable=true \
     ro.opengles.version=196608 \
-    persist.sys.wfd.virtual=0
+    persist.sys.wfd.virtual=0 \
+    ro.telephony.default_network=9
 
 # Zip
 PRODUCT_PACKAGES += \
