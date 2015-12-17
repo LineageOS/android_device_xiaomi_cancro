@@ -290,10 +290,11 @@ PRODUCT_PACKAGES += \
 
 # FM Radio
 PRODUCT_PACKAGES += \
-	qcom.fmradio \
+    FMRadio \
+    libfmjni
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    hw.fm.internal_antenna=true
+    ro.fm.transmitter=false
 
 # USB
 PRODUCT_PACKAGES += \
