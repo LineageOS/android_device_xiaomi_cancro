@@ -16,8 +16,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=1
 
 # Charger
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/root/chargeonlymode:root/sbin/chargeonlymode
+PRODUCT_PACKAGES += \
+    charger_res_images
+
+# Allows healthd to boot directly from charger mode rather than initiating a reboot.
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.enable_boot_charger_mode=1
+
 
 # Quick charging
 PRODUCT_PROPERTY_OVERRIDES += \
