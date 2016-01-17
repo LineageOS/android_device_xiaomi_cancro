@@ -3,6 +3,7 @@
 /dev/block/platform/msm_sdcc\.1/by-name/persist              u:object_r:persist_block_device:s0
 /sbin/chargeonlymode                                         u:object_r:chargeonlymode:s0
 /sys/devices/virtual/graphics/fb0/color_enhance              u:object_r:display_sysfs:s0
+/system/lib/hw/consumerir.msm8974.so                         u:object_r:consumerir:s0
 
 #============= cmhw ==============
 /sys/vibrator/pwmvalue                                       u:object_r:vibeamp_sysfs:s0
