@@ -53,4 +53,13 @@ $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wlan/prima; \
     ln -sf /data/misc/wifi/WCNSS_qcom_cfg.ini \
 	    $(TARGET_OUT)/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
 
+# Create links for audcal data files
+$(shell mkdir -p $(TARGET_OUT)/etc/firmware/wcd9320; \
+	ln -sf /data/misc/audio/wcd9320_anc.bin \
+		$(TARGET_OUT)/etc/firmware/wcd9320/wcd9320_anc.bin;\
+	ln -sf /data/misc/audio/mbhc.bin \
+		$(TARGET_OUT)/etc/firmware/wcd9320/wcd9320_mbhc.bin; \
+	ln -sf /data/misc/audio/wcd9320_mad_audio.bin \
+		$(TARGET_OUT)/etc/firmware/wcd9320/wcd9320_mad_audio.bin)
+
 endif

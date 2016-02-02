@@ -25,9 +25,9 @@
 <!--- WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE      -->
 <!--- OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN    -->
 <!--- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                             -->
-<listen_platform_info>
+<audio_platform_info>
     <device name="DEVICE_HANDSET_APE_ACDB_ID" acdb_id="100" />
     <ctrl name="max_ape_sessions" value="8" />
     <ctrl name="max_ape_keywords" value="10" />
     <ctrl name="max_ape_kw_user_pairs" value="10" />
-</listen_platform_info>
+</audio_platform_info>

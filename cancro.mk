@@ -143,7 +143,7 @@ PRODUCT_PACKAGES += \
     Tag
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/nfc/nfcchecker.sh:install/bin/nfcchecker.sh
+    $(LOCAL_PATH)/releasetools/device_check.sh:install/bin/device_check.sh
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
@@ -165,26 +165,46 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/init.qcom.audio.sh:system/etc/init.qcom.audio.sh \
-    $(LOCAL_PATH)/audio/listen_platform_info.xml:system/etc/listen_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/audio/mixer_paths_4.xml:system/etc/mixer_paths_4.xml \
     $(LOCAL_PATH)/audio/acdb/MTP/MTP_Bluetooth_cal.acdb:system/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb \
     $(LOCAL_PATH)/audio/acdb/MTP/MTP_General_cal.acdb:system/etc/acdbdata/MTP/MTP_General_cal.acdb \
     $(LOCAL_PATH)/audio/acdb/MTP/MTP_Global_cal.acdb:system/etc/acdbdata/MTP/MTP_Global_cal.acdb \
     $(LOCAL_PATH)/audio/acdb/MTP/MTP_Handset_cal.acdb:system/etc/acdbdata/MTP/MTP_Handset_cal.acdb \
     $(LOCAL_PATH)/audio/acdb/MTP/MTP_Hdmi_cal.acdb:system/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb \
     $(LOCAL_PATH)/audio/acdb/MTP/MTP_Headset_cal.acdb:system/etc/acdbdata/MTP/MTP_Headset_cal.acdb \
-    $(LOCAL_PATH)/audio/acdb/MTP/MTP_Speaker_cal.acdb:system/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+    $(LOCAL_PATH)/audio/acdb/MTP/MTP_Speaker_cal.acdb:system/etc/acdbdata/MTP/MTP_Speaker_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP/MTP_Bluetooth_cal.acdb:system/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP_4/MTP_General_cal.acdb:system/etc/acdbdata/MTP_4/MTP_General_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP_4/MTP_Global_cal.acdb:system/etc/acdbdata/MTP_4/MTP_Global_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP_4/MTP_Handset_cal.acdb:system/etc/acdbdata/MTP_4/MTP_Handset_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP_4/MTP_Hdmi_cal.acdb:system/etc/acdbdata/MTP_4/MTP_Hdmi_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP_4/MTP_Headset_cal.acdb:system/etc/acdbdata/MTP_4/MTP_Headset_cal.acdb \
+    $(LOCAL_PATH)/audio/acdb/MTP_4/MTP_Speaker_cal.acdb:system/etc/acdbdata/MTP_4/MTP_Speaker_cal.acdb \
+    $(LOCAL_PATH)/libdirac/diracmobile.config:system/vendor/etc/diracmobile.config \
+    $(LOCAL_PATH)/libdirac/diracmobile_4.config:system/vendor/etc/diracmobile.config
+
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.speaker.prot.enable=true \
+    qcom.hw.aac.encoder=false \
+    tunnel.audio.encode=false \
+    persist.audio.init_volume_index=1 \
+    audio.offload.buffer.size.kb=32 \
+    audio.offload.video=true \
+    audio.offload.gapless.enabled=false \
+    audio.offload.disable=0 \
+    audio.offload.pcm.enable=true \
+    media.aac_51_output_enabled=true \
     ro.qc.sdk.audio.ssr=false \
     ro.qc.sdk.audio.fluencetype=fluence \
-    audio.offload.video=false \
     use.voice.path.for.pcm.voip=true \
     persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.voicerec=true \
-    persist.audio.fluence.speaker=false
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=true
 
 # Media profile
 PRODUCT_COPY_FILES += \
@@ -199,14 +219,24 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libdivxdrmdecrypt \
+    libdirac \
+    libextmedia_jni \
+    libdashplayer \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
     libOmxVdec \
-    libOmxVenc \
+    libOmxVdecHevc \
+    libOmxVidcCommon \
     libstagefrighthw \
+    qcmediaplayer \
+    libqcmediaplayer \
+    libextmedia_jni
+
+PRODUCT_BOOT_JARS += \
+    qcmediaplayer
 
 PRODUCT_PACKAGES += \
     audiod \

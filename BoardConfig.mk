@@ -54,6 +54,7 @@ TARGET_KERNEL_ARCH                 := arm
 TARGET_KERNEL_CONFIG               := cyanogen_cancro_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 BOARD_DTBTOOL_ARGS                 := -2
+TARGET_BOARD_KERNEL_HEADERS        := $(CANCRO_PATH)/kernel-headers
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE       := true
@@ -66,8 +67,25 @@ TARGET_POWERHAL_VARIANT             := qcom
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(CANCRO_PATH)/power/power_ext.c
 
 # Audio
-BOARD_USES_ALSA_AUDIO                      := true
+AUDIO_FEATURE_ENABLED_COMPRESS_VOIP        := true
+AUDIO_FEATURE_ENABLED_EXTN_FORMATS         := true
+AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL      := true
+AUDIO_FEATURE_ENABLED_EXTN_POST_PROC       := true
+AUDIO_FEATURE_ENABLED_ANC_HEADSET          := false
+AUDIO_FEATURE_ENABLED_FLUENCE              := true
+AUDIO_FEATURE_ENABLED_HFP                  := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
+AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL      := true
+AUDIO_FEATURE_PCM_IOCTL_ENABLED            := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE         := true
+AUDIO_FEATURE_ENABLED_USBAUDIO             := true
+AUDIO_FEATURE_ENABLED_SPKR_PROTECTION      := true
+AUDIO_FEATURE_ENABLED_EXTN_RESAMPLER       := true
+BOARD_USES_ALSA_AUDIO                      := true
+BOARD_FORTEMEDIA_QDSP_ENABLED              := true
+TARGET_USES_QCOM_MM_AUDIO                  := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS           := true
+USE_CUSTOM_AUDIO_POLICY                    := 1
 
 # FM Radio
 TARGET_FM_LEGACY_PATCHLOADER := true
