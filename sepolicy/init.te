@@ -14,3 +14,5 @@ allow init self:socket { write read create ioctl };
 allow init sensors_device:chr_file getattr;
 allow init sensors_socket:sock_file write;
 allow init sensors:unix_stream_socket connectto;
+allow init system_data_file:blk_file getattr;
+allow init system_data_file:chr_file getattr;
