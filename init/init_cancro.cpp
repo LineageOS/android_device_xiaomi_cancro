@@ -91,6 +91,9 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         case 1974:
             property_set("ro.product.model", "MI 4");
             break;
+        case 1972:
+            property_set("ro.product.model", "MI 4 LTE");
+            break;
         default:
             // Other unsupported variants
             property_set("ro.product.model", "Unsupported MI Cancro");
