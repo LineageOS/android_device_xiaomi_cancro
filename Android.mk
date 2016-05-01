@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,9 +23,14 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 include $(CLEAR_VARS)
 
 KM_IMAGES := \
-    keymaste.b00 keymaste.b01 keymaste.b02 keymaste.b03 keymaste.mdt
+    keymaste.b00 \
+    keymaste.b01 \
+    keymaste.b02 \
+    keymaste.b03 \
+    keymaste.mdt
 
 KM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(KM_IMAGES)))
+
 $(KM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Keymaster firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -35,8 +40,15 @@ $(KM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(KM_SYMLINKS)
 
 WCNSS_IMAGES := \
-    wcnss.b00 wcnss.b01 wcnss.b02 wcnss.b04 wcnss.b06 \
-    wcnss.b07 wcnss.b08 wcnss.b09 wcnss.mdt
+    wcnss.b00 \
+    wcnss.b01 \
+    wcnss.b02 \
+    wcnss.b04 \
+    wcnss.b06 \
+    wcnss.b07 \
+    wcnss.b08 \
+    wcnss.b09 \
+    wcnss.mdt
 
 WCNSS_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(WCNSS_IMAGES)))
 $(WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
