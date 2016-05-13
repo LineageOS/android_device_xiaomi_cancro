@@ -26,6 +26,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml  \
     frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml
 
+# fast track settings
+PRODUCT_PROPERTY_OVERRIDES += \
+    af.fast_track_multiplier=1 \
+    audio_hal.period_size=192
+
 # fluence multi-mic solution
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=fluence \
