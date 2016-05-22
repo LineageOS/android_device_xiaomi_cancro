@@ -18,7 +18,7 @@
 
 RAW_ID=`cat /sys/devices/system/soc/soc0/raw_id`
 
-if [ $RAW_ID == 1974 ]; then
+if [ $RAW_ID == 1974 -o $RAW_ID == 1972]; then
     # Remove NFC
     rm -rf /system/app/NfcNci
     rm -rf /system/priv-app/Tag
