@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_cb49728b",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-05-26T13:44:49Z",
+      "side": 1,
+      "message": "this doesn\u0027t exist, even if you were to spell it right, it doesn\u0027t exist",
+      "revId": "d13debc87f2fd65bdd2a54c7b5eec50c42c7d589",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_8b5b7a52",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-05-26T13:44:49Z",
+      "side": 1,
+      "message": "this is the default setting, so this line doesn\u0027t do anything...",
+      "revId": "d13debc87f2fd65bdd2a54c7b5eec50c42c7d589",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
