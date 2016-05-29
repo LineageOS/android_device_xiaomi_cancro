@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_4df912c6",
+        "filename": "init/init_cancro.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-05-29T17:29:12Z",
+      "side": 1,
+      "message": "Should add init_alarm_boot_properties(); here",
+      "revId": "ab5d60f95265ccfca1097b112fda886ea481a7a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
