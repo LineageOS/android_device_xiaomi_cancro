@@ -36,7 +36,7 @@
 #include "log.h"
 #include "util.h"
 
-#include "init_msm.h"
+#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
 
 #define RAW_ID_PATH     "/sys/devices/system/soc/soc0/raw_id"
 #define BUF_SIZE         64
@@ -65,14 +65,10 @@ static int read_file2(const char *fname, char *data, int max_size)
     return 1;
 }
 
-void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
+void vendor_load_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
     int rc;
     unsigned long raw_id = -1;
-
-    UNUSED(msm_id);
-    UNUSED(msm_ver);
-    UNUSED(board_type);
 
     /* get raw ID */
     rc = read_file2(RAW_ID_PATH, tmp, sizeof(tmp));
