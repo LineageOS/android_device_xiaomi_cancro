@@ -453,11 +453,6 @@ on property:bluetooth.dun.status=stopped
 on property:ro.bluetooth.ftm_enabled=true
     start ftmd
 
-service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
-    class core
-    user root
-    oneshot
-
 on property:vold.decrypt=trigger_restart_framework
     start config_bt_addr
     start config_bluetooth
