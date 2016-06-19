@@ -12,7 +12,6 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.qcom.usb.rc \
     ueventd.qcom.rc \
-    init.class_main.sh \
     init.mdm.sh \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
