@@ -502,4 +502,3 @@ app/shutdownlistener.apk
 app/fastdormancy.apk
 app/TimeService.apk
 ../sbin/e2fsck_static
-../sbin/chargeonlymode
