@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_ce8549af",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-20T09:56:14Z",
+      "side": 1,
+      "message": "Android imports should be on top of the other imports",
+      "revId": "b638db332233d69659545f3bf0e2a4dd926517a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_0ea4c156",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-20T09:56:14Z",
+      "side": 1,
+      "message": "Should be static final int. Actually, there really isn\u0027t any point in defining constants for these.",
+      "revId": "b638db332233d69659545f3bf0e2a4dd926517a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_ae880dc6",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-20T09:56:14Z",
+      "side": 1,
+      "message": "Might be better if you just caught the specific exception",
+      "revId": "b638db332233d69659545f3bf0e2a4dd926517a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
