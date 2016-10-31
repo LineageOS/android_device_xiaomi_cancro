@@ -428,8 +428,9 @@ on property:bluetooth.dun.status=stopped
 on property:ro.bluetooth.ftm_enabled=true
     start ftmd
 
-on property:vold.decrypt=trigger_restart_framework
-    start config_bt_addr
+on property:init.svc.bdaddr=stopped
+    chmod 644 /data/misc/bluetooth/bdaddr
+    chown bluetooth bluetooth /data/misc/bluetooth/bdaddr
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
@@ -443,10 +444,10 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
     user root
     oneshot
 
-service config_bt_addr /system/bin/btnvtool -O
+service bdaddr /system/bin/bdaddr_xiaomi
     class core
-    user bluetooth
-    group bluetooth radio
+    user root
+    group system
     oneshot
 
 service rmt_storage /system/bin/rmt_storage
@@ -480,7 +481,7 @@ service start_hci_filter /system/bin/wcnss_filter
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
-    group bluetooth net_bt_admin
+    group qcom_oncrpc bluetooth net_bt_admin system
     disabled
     oneshot
 

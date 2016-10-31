@@ -1,5 +1,5 @@
 # Bluetooth
-bin/btnvtool
+bin/hci_qcomm_init
 vendor/lib/libbtnv.so
 
 # ADSP

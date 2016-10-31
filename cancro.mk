@@ -37,6 +37,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/quipc.conf:system/etc/quipc.conf \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    bdaddr_xiaomi
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8974 \

@@ -4,6 +4,9 @@
 /dev/bcm2079x                                                u:object_r:nfc_device:s0
 /dev/block/platform/msm_sdcc\.1/by-name/persist              u:object_r:persist_block_device:s0
 
+# Bluetooth
+/system/bin/bdaddr_xiaomi                                    u:object_r:bdaddr_exec:s0
+
 #============= cmhw ==============
 /sys/vibrator/pwmvalue                                       u:object_r:vibeamp_sysfs:s0
 /sys/bus/i2c/drivers/atmel_mxt_ts/2-004a/keys_off            u:object_r:display_sysfs:s0

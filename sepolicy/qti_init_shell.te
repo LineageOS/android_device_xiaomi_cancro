@@ -11,3 +11,5 @@ allow qti_init_shell sysfs_battery_supply:dir search;
 allow qti_init_shell sysfs_battery_supply:file { getattr setattr };
 allow qti_init_shell sysfs_devices_system_cpu:file setattr;
 allow qti_init_shell sysfs_wake_lock:file { getattr setattr };
+allow qti_init_shell bluetooth_data_file:dir search;
+allow qti_init_shell bluetooth_data_file:file r_file_perms;
