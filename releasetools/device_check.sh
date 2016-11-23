@@ -18,7 +18,18 @@
 
 RAW_ID=`cat /sys/devices/system/soc/soc0/raw_id`
 
-if [ $RAW_ID == 1974 ]; then
+ui_print() {
+    if [ ! -z ${OUTFD} ]; then
+        if [ ! -z "${1}" ]; then
+            /system/bin/toybox echo "ui_print ${1}" > /proc/self/fd/${OUTFD}
+        fi
+        /system/bin/toybox echo "ui_print " > /proc/self/fd/${OUTFD}
+    else
+        /system/bin/toybox echo ${1}
+    fi;
+}
+
+if [ $RAW_ID == 1974 ] || [ $RAW_ID == 1972 ]; then
     # Remove NFC
     rm -rf /system/app/NfcNci
     rm -rf /system/priv-app/Tag
@@ -40,4 +51,8 @@ else
     rm -f /system/etc/mixer_paths_4.xml
     # Remove Mi4 libdirac config
     rm -f /system/vendor/etc/diracmobile_4.config
+fi
+
+if [ $RAW_ID != 1978 ] && [ $RAW_ID != 1974 ]; then
+    ui_print "Warning: you are flashing on an unsupported model!";
 fi
