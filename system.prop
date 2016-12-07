@@ -90,4 +90,6 @@ ro.qualcomm.bluetooth.nap=true
 ro.qualcomm.bluetooth.opp=true
 ro.qualcomm.bluetooth.pbap=true
 
+ro.nfc.port=I2C
+
 ro.sys.sdcardfs=true
