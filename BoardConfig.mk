@@ -72,6 +72,7 @@ BOARD_USES_ALSA_AUDIO                      := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 
 # FM Radio
+BOARD_HAVE_QCOM_FM := true
 TARGET_FM_LEGACY_PATCHLOADER := true
 
 # Bluetooth
