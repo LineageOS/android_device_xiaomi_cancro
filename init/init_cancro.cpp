@@ -108,8 +108,8 @@ void vendor_load_properties()
 
     property_set("ro.product.device", "cancro");
     property_set("ro.product.name", "cancro");
-    property_set("ro.build.fingerprint", "Xiaomi/cancro/cancro:6.0.1/MMB29M/6.5.12:userdebug/test-keys");
-    property_set("ro.build.description", "cancro-userdebug 6.0.1 MMB29M 6.5.12 test-keys");
+    property_set("ro.build.fingerprint", "Xiaomi/cancro/cancro:6.0.1/MMB29M/V8.1.6.0.MXDMIDI:user/release-keys");
+    property_set("ro.build.description", "cancro-user 6.0.1 MMB29M V8.1.6.0.MXDMIDI release-keys");
 
     switch (raw_id) {
         case 1978:
