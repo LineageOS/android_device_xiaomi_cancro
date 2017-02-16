@@ -90,7 +90,6 @@ case "$target" in
                 echo 1728000 > /sys/module/cpu_boost/parameters/sync_threshold
                 echo 100000 > /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor
                 echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
-                setprop ro.qualcomm.perf.cores_online 1
             ;;
             *)
                 echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
@@ -154,6 +153,10 @@ case "$target" in
         chown system.system /sys/module/cpu_boost/parameters/sync_threshold
         chown system.system /sys/module/cpu_boost/parameters/input_boost_freq
         chown system.system /sys/module/cpu_boost/parameters/input_boost_ms
+        chmod -h 0660 /sys/power/wake_lock
+        chmod -h 0660 /sys/power/wake_unlock
+        chown radio.system /sys/power/wake_lock
+        chown radio.system /sys/power/wake_unlock
         echo 0 > /dev/cpuctl/apps/cpu.notify_on_migrate
         start mpdecision
         setprop sys.perf.profile `getprop sys.perf.profile`

@@ -1,0 +1,3 @@
+#============= uncrypt ==============
+allow uncrypt device:dir write;
+allow uncrypt kmsg_device:chr_file { open write };

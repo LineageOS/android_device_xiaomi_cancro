@@ -1,4 +1,5 @@
 #============= init ==============
+allow init debugfs:file write;
 allow init device:chr_file { create unlink };
 allow init firmware_file:dir mounton;
 allow init sensors_device:chr_file getattr;
