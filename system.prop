@@ -6,7 +6,6 @@ mmp.enable.3g2=true
 mm.enable.smoothstreaming=true
 
 ro.ril.enable.amr.wideband=1
-ro.telephony.default_network=9
 
 wifi.interface=wlan0
 persist.data.netmgrd.qos.enable=true

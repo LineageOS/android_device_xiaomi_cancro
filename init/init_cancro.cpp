@@ -115,9 +115,11 @@ void vendor_load_properties()
         case 1978:
             property_set("ro.product.model", "MI 3W");
             property_set("ro.nfc.port", "I2C");
+            property_set("ro.telephony.default_network", "9");
             break;
         case 1974:
             property_set("ro.product.model", "MI 4");
+            property_set("ro.telephony.default_network", "9");
             break;
         case 1972:
             property_set("ro.product.model", "MI 4LTE");
