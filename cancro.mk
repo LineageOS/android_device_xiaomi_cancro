@@ -226,11 +226,6 @@ PRODUCT_PACKAGES += \
 # Baseband assertion
 PRODUCT_PACKAGES += librecovery_updater_cancro
 
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
-
-
 # Permissions
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
