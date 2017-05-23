@@ -2,6 +2,7 @@
 <!--
 /*
 ** Copyright 2015, The CyanogenMod Project
+** Copyright 2017, The LineageOS Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -30,6 +31,6 @@
          LIGHTS_ADJUSTABLE_NOTIFICATION_LED_BRIGHTNESS = 32
          For example, a device support pulsating, RGB notification and
          battery LEDs would set this config to 11. -->
-    <integer name="config_deviceLightCapabilities">11</integer>
+    <integer name="config_deviceLightCapabilities">43</integer>
 
 </resources>
