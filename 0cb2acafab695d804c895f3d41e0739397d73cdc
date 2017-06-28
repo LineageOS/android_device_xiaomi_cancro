@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_43691bf8",
+        "filename": "init/init_cancro.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-06-28T06:26:29Z",
+      "side": 1,
+      "message": "You don\u0027t want to change this.",
+      "range": {
+        "startLine": 130,
+        "startChar": 12,
+        "endLine": 130,
+        "endChar": 29
+      },
+      "revId": "0cb2acafab695d804c895f3d41e0739397d73cdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_037313ea",
+        "filename": "init/init_cancro.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-06-28T06:26:29Z",
+      "side": 1,
+      "message": "You don\u0027t want to change this.",
+      "range": {
+        "startLine": 137,
+        "startChar": 12,
+        "endLine": 137,
+        "endChar": 29
+      },
+      "revId": "0cb2acafab695d804c895f3d41e0739397d73cdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_23641721",
+        "filename": "init/init_cancro.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-06-28T06:26:29Z",
+      "side": 1,
+      "message": "Or this.",
+      "range": {
+        "startLine": 138,
+        "startChar": 12,
+        "endLine": 138,
+        "endChar": 29
+      },
+      "revId": "0cb2acafab695d804c895f3d41e0739397d73cdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
