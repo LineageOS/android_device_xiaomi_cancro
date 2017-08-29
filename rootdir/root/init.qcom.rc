@@ -452,7 +452,7 @@ service config_bt_addr /system/bin/btnvtool -O
 service rmt_storage /system/bin/rmt_storage
     class core
     user root
-    group system
+    group system wakelock
 
 on property:ro.boot.emmc=true
     start rmt_storage
