@@ -162,9 +162,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
-# Keymaster
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-
 # Simple time service client
 BOARD_USES_QC_TIME_SERVICES := true
 
