@@ -518,7 +518,6 @@ vendor/lib/mediadrm/libwvdrmengine.so
 # WiFi
 bin/lowi-server
 bin/wcnss_filter
-bin/wcnss_service
 bin/xtwifi-client
 bin/xtwifi-inet-agent
 etc/firmware/cpp_firmware_v1_1_1.fw
