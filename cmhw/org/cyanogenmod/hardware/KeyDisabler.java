@@ -48,7 +48,8 @@ public class KeyDisabler {
         }
     };
 
-    public static boolean isSupported() { return true; }
+    public static boolean isSupported() { return FileUtils.isFileReadable(KeyDisabler_path()) &&
+        FileUtils.isFileWritable(KeyDisabler_path()); }
 
     public static boolean isActive() {
         return (FileUtils.readOneLine(KeyDisabler_path()).equals("0"));
