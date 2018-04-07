@@ -40,7 +40,6 @@ public class KeyDisabler {
 
     private static String KeyDisabler_path() {
         File ts = new File(CONTROL_PATH_TS);
-        File ts_640 = new File(CONTROL_PATH_TS_640);
         if (ts.exists()) {
             return CONTROL_PATH_TS;
         } else {
