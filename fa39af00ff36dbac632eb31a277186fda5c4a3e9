@@ -22,6 +22,29 @@
       "revId": "fa39af00ff36dbac632eb31a277186fda5c4a3e9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3938a563_e78b9d82",
+        "filename": "wcnss_xiaomi/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-06-15T12:56:32Z",
+      "side": 1,
+      "message": "Also, you don\u0027t need this.\n\nReason: https://github.com/LineageOS/android_device_xiaomi_cancro/blob/cm-14.1/Android.mk#L19-L21",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "fa39af00ff36dbac632eb31a277186fda5c4a3e9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
